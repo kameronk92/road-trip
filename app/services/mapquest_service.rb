@@ -10,7 +10,7 @@ class MapquestService
 
   def self.conn
     Faraday.new('http://www.mapquestapi.com') do |req|
-      req.params['key'] = ENV['MAPQUEST_API_KEY']
+      req.params['key'] = Rails.application.credentials.mapquest_api[:key]
     end
   end
 end
