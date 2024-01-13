@@ -5,6 +5,5 @@ RSpec.describe 'Weather API Service' do
     coordinates = {lat: 39.738453, lng: -104.984853}
 
     current_weather = WeatherApiService.get_current_weather(coordinates)
-    require 'pry'; binding.pry
   end
 end
