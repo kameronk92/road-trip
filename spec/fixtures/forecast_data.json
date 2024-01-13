@@ -1,0 +1,37 @@
+{
+  "data": {
+    "id": null,
+    "type": "forecast",
+    "attributes": {
+      "current_weather": {
+        "last_updated": "2023-04-07 16:30",
+        "temperature": 55.0,
+        "feels_like": 52.0,
+        "humidity": 20,
+        "uvi": 5.0,
+        "visibility": 10.0,
+        "condition": "clear sky",
+        "icon": "01d"
+      },
+      "daily_weather": [
+        {
+          "date": "2023-04-07",
+          "sunrise": "07:13 AM",
+          "sunset": "07:42 PM",
+          "max_temp": 55.0,
+          "min_temp": 40.0,
+          "condition": "clear sky",
+          "icon": "01d"
+        }
+      ],
+      "hourly_weather": [
+        {
+          "time": "14:00",
+          "temperature": 54.5,
+          "condition": "clear sky",
+          "icon": "01d"
+        }
+      ]
+    }
+  }
+}
