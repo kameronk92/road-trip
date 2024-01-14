@@ -10,7 +10,6 @@ RSpec.describe 'Forecast API' do
 
     forecast = JSON.parse(response.body, symbolize_names: true)
     # test top level keys
-    require 'pry'; binding.pry
     expect(forecast).to have_key(:data)
     data = forecast[:data]
     expect(data).to have_key(:id)
@@ -21,7 +20,6 @@ RSpec.describe 'Forecast API' do
 
     # test attributes top level keys
     attributes = data[:attributes]
-    require 'pry'; binding.pryq
     expect(attributes).to have_key(:current_weather)
     expect(attributes).to have_key(:daily_weather)
     expect(attributes).to have_key(:hourly_weather)

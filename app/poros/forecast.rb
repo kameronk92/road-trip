@@ -4,9 +4,9 @@ class Forecast
   def initialize(data)
     @id = nil
     @type = "forecast"
-    @current_weather = current_weather(data)
-    @daily_weather = daily_weather(data)
-    @hourly_weather = hourly_weather(data)
+    @current_weather = current(data)
+    @daily_weather = daily(data)
+    @hourly_weather = hourly(data)
   end
 
   # def forecast_attributes(data)
@@ -17,19 +17,20 @@ class Forecast
   #   }
   # end
 
-  def current_weather(data)
+  def current(data)
     {
       last_updated: data[:current][:last_updated],
-      temp_f: data[:current][:temp_f],
-      feelslike_f: data[:current][:feelslike_f],
+      temperature: data[:current][:temp_f],
+      feels_like: data[:current][:feelslike_f],
       humidity: data[:current][:humidity],
-      uv: data[:current][:uv],
-      vis_miles: data[:current][:vis_miles],
-      condition: data[:current][:condition]
+      uvi: data[:current][:uv],
+      visibility: data[:current][:vis_miles],
+      condition: data[:current][:condition][:text],
+      icon: data[:current][:condition][:icon]
     }
   end
 
-  def daily_weather(data)
+  def daily(data)
     data[:forecast][:forecastday].map do |day|
       {
         date: day[:date],
@@ -43,11 +44,11 @@ class Forecast
     end
   end
 
-  def hourly_weather(data)
+  def hourly(data)
     data[:forecast][:forecastday][0][:hour].map do |hour|
       {
         time: hour[:time],
-        temp: hour[:temp_f],
+        temperature: hour[:temp_f],
         condition: hour[:condition][:text],
         icon: hour[:condition][:icon]
       }
