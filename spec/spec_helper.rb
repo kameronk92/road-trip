@@ -95,3 +95,7 @@ RSpec.configure do |config|
 require 'simplecov'
 SimpleCov.start
 end
+
+require 'webmock/rspec'
+
+require 'vcr'

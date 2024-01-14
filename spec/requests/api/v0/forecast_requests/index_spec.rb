@@ -2,16 +2,15 @@ require 'rails_helper'
 
 RSpec.describe 'Forecast API' do
   it "sends detailed forecast data for a city" do
-    expected = File.read('spec/fixtures/forecast_data.json')
-
+    VCR.use_cassette('forecast_data') do
+    
     get api_v0_forecast_path, params: {location: "denver,co"}
 
     expect(response).to be_successful
-    expect(response.body).to eq(expected)
 
     forecast = JSON.parse(response.body, symbolize_names: true)
-
     # test top level keys
+    require 'pry'; binding.pry
     expect(forecast).to have_key(:data)
     data = forecast[:data]
     expect(data).to have_key(:id)
@@ -22,6 +21,7 @@ RSpec.describe 'Forecast API' do
 
     # test attributes top level keys
     attributes = data[:attributes]
+    require 'pry'; binding.pryq
     expect(attributes).to have_key(:current_weather)
     expect(attributes).to have_key(:daily_weather)
     expect(attributes).to have_key(:hourly_weather)
@@ -74,5 +74,6 @@ RSpec.describe 'Forecast API' do
     expect(hourly_weather[:condition]).to be_a(String)
     expect(hourly_weather).to have_key(:icon)
     expect(hourly_weather[:icon]).to be_a(String)
+    end
   end
 end
