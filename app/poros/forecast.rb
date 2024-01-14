@@ -41,7 +41,7 @@ class Forecast
       {
         time: hour[:time],
         temperature: hour[:temp_f],
-        condition: hour[:condition][:text],
+        conditions: hour[:condition][:text],
         icon: hour[:condition][:icon]
       }
     end

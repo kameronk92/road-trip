@@ -17,6 +17,7 @@ RSpec.describe 'Forecast API' do
       expect(data).to have_key(:type)
       expect(data[:type]).to eq("forecast")
       expect(data).to have_key(:attributes)
+      expect(data).to_not have_key(:location)
 
       # test attributes top level keys
       attributes = data[:attributes]
@@ -42,6 +43,11 @@ RSpec.describe 'Forecast API' do
       expect(current_weather[:condition]).to be_a(String)
       expect(current_weather).to have_key(:icon)
       expect(current_weather[:icon]).to be_a(String)
+      expect(current_weather).to_not have_key(:last_updated_epoch)
+      expect(current_weather).to_not have_key(:temp_f)
+      expect(current_weather).to_not have_key(:temp_c)
+      expect(current_weather).to_not have_key(:is_day)
+      expect(current_weather).to_not have_key(:wind_mph)
       
       #test daily_weather
       expect(attributes[:daily_weather]).to be_an(Array)
@@ -68,8 +74,8 @@ RSpec.describe 'Forecast API' do
       expect(hourly_weather[:time]).to be_a(String)
       expect(hourly_weather).to have_key(:temperature)
       expect(hourly_weather[:temperature]).to be_a(Float)
-      expect(hourly_weather).to have_key(:condition)
-      expect(hourly_weather[:condition]).to be_a(String)
+      expect(hourly_weather).to have_key(:conditions)
+      expect(hourly_weather[:conditions]).to be_a(String)
       expect(hourly_weather).to have_key(:icon)
       expect(hourly_weather[:icon]).to be_a(String)
     end
