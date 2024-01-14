@@ -1,11 +1,4 @@
 class WeatherApiService
-  def self.get_current_weather(coordinates)
-    response = conn.get('/v1/current.json') do |req|
-      req.params['q'] = "#{coordinates[:lat]},#{coordinates[:lng]}"
-    end
-    JSON.parse(response.body, symbolize_names: true)
-  end
-
   def self.get_forecast(coordinates)
     response = conn.get('/v1/forecast.json') do |req|
       req.params['q'] = "#{coordinates[:lat]},#{coordinates[:lng]}"

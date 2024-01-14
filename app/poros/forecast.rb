@@ -9,14 +9,6 @@ class Forecast
     @hourly_weather = hourly(data)
   end
 
-  # def forecast_attributes(data)
-  #   {
-  #     current_weather: current_weather(data),
-  #     daily_weather: daily_weather(data),
-  #     hourly_weather: hourly_weather(data)
-  #   }
-  # end
-
   def current(data)
     {
       last_updated: data[:current][:last_updated],
