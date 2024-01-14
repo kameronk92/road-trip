@@ -6,6 +6,14 @@ class WeatherApiService
     JSON.parse(response.body, symbolize_names: true)
   end
 
+  def self.get_forecast(coordinates)
+    response = conn.get('/v1/forecast.json') do |req|
+      req.params['q'] = "#{coordinates[:lat]},#{coordinates[:lng]}"
+      req.params['days'] = 5
+    end
+    JSON.parse(response.body, symbolize_names: true)
+  end
+
   private
 
   def self.conn
