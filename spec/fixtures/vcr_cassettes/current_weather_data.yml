@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.weatherapi.com/v1/current.json?key=9a2d609df20142a99e2200922241301&q=39.738453,-104.984853
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 14 Jan 2024 20:01:19 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Server:
+      - BunnyCDN-IL1-941
+      Cdn-Pullzone:
+      - '93447'
+      Cdn-Uid:
+      - 8fa3a04a-75d9-4707-8056-b7b33c8ac7fe
+      Cdn-Requestcountrycode:
+      - US
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=180
+      Via:
+      - 1.1 varnish (Varnish/6.0)
+      X-Weatherapi-Qpm-Left:
+      - '4999958'
+      X-Varnish:
+      - '811271696'
+      Cdn-Proxyver:
+      - '1.04'
+      Cdn-Requestpullsuccess:
+      - 'True'
+      Cdn-Requestpullcode:
+      - '200'
+      Cdn-Cachedat:
+      - 01/14/2024 19:58:50
+      Cdn-Edgestorageid:
+      - '894'
+      Cdn-Status:
+      - '200'
+      Cdn-Requestid:
+      - 45d471b3d40b8e2692a35cd1382f8434
+      Cdn-Cache:
+      - HIT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"location":{"name":"Denver","region":"Colorado","country":"United
+        States of America","lat":39.74,"lon":-104.98,"tz_id":"America/Denver","localtime_epoch":1705262293,"localtime":"2024-01-14
+        12:58"},"current":{"last_updated_epoch":1705261500,"last_updated":"2024-01-14
+        12:45","temp_c":-17.2,"temp_f":1.0,"is_day":1,"condition":{"text":"Partly
+        cloudy","icon":"//cdn.weatherapi.com/weather/64x64/day/116.png","code":1003},"wind_mph":2.2,"wind_kph":3.6,"wind_degree":9,"wind_dir":"N","pressure_mb":1010.0,"pressure_in":29.82,"precip_mm":0.02,"precip_in":0.0,"humidity":65,"cloud":75,"feelslike_c":-23.3,"feelslike_f":-9.8,"vis_km":16.0,"vis_miles":9.0,"uv":1.0,"gust_mph":6.2,"gust_kph":9.9}}'
+  recorded_at: Sun, 14 Jan 2024 20:01:19 GMT
+recorded_with: VCR 6.2.0
