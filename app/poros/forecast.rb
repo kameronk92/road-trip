@@ -46,4 +46,11 @@ class Forecast
       }
     end
   end
+
+  def summary(data)
+    {
+      summary: data[:current][:condition][:text],
+      temperature: data[:current][:temp_f].to_s
+    }
+  end
 end
