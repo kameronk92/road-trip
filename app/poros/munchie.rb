@@ -1,8 +1,9 @@
 class Munchie
-  attr_reader :destination_city, :forecast, :restaurant
+  attr_reader :id, :destination_city, :forecast, :restaurant
 
   def initialize(destination_city, forecast, restaurant)
-    @destination_city = destination_city
+    @id = nil
+    @destination_city = restaurant_city(restaurant)
     @forecast = forecast
     @restaurant = restaurant_details(restaurant)
   end
@@ -14,5 +15,9 @@ class Munchie
       rating: restaurant[:rating],
       reviews: restaurant[:review_count]
     }
+  end
+
+  def restaurant_city(restaurant)
+    "#{restaurant[:location][:city]}, #{restaurant[:location][:state]}"
   end
 end
