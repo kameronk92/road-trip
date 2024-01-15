@@ -46,4 +46,26 @@ RSpec.describe 'Munchies API' do
       end
     end
   end
+
+  describe 'sad path' do
+    describe 'GET /api/v1/munchies?destination=&food=' do
+      it "returns an error if parameters are not passed" do
+        VCR.use_cassette('munchies_sad_request_data') do
+          get '/api/v1/munchies?destination=&food='
+        
+          response_body = JSON.parse(response.body, symbolize_names: true)
+
+          expect(response).to_not be_successful
+          expect(response.status).to eq(400)
+
+          expect(response_body).to be_a(Hash)
+          expect(response_body).to have_key(:error)
+          expect(response_body[:error]).to be_a(String)
+          expect(response_body[:error]).to eq('Please provide a destination and food type')
+
+          require 'pry'; binding.pry
+        end
+      end
+    end
+  end
 end

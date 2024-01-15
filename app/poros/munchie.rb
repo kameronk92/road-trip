@@ -18,6 +18,8 @@ class Munchie
   end
 
   def restaurant_city(restaurant)
+    # used this to format city/state, seemed simpler than formatting params./
+    # would handle a case where city had no restaurants in facade
     "#{restaurant[:location][:city]}, #{restaurant[:location][:state]}"
   end
 end
