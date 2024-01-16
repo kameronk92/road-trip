@@ -8,7 +8,7 @@ class Api::V0::UsersController < ApplicationController
       render json: { errors: "Email already exists" }, status: :bad_request
     elsif params[:password].nil? || params[:password_confirmation].nil?
       render json: { errors: "Enter both password and password confirmation" }, status: :bad_request
-    elsif user.params[:email].nil?
+    elsif params[:email].nil?
       render json: { errors: "Enter email" }, status: :bad_request
     elsif user.save
       render json: UsersSerializer.new(user), status: :created
