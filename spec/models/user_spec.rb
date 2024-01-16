@@ -8,7 +8,7 @@ RSpec.describe 'User model' do
       password_confirmation: "password"
     }
 
-    user = User.create!(params)
+    user = Users.create!(params)
 
     expect(user.email).to eq(params[:email])
     expect(user.password_digest).to_not eq(params[:password])

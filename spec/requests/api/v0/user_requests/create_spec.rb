@@ -13,7 +13,7 @@ RSpec.describe 'User Create API' do
 
       expect(response).to be_successful
       expect(response.status).to eq(201)
-
+require 'pry'; binding.pry
       body = JSON.parse(response.body, symbolize_names: true)
       expect(body).to be_a(Hash)
       expect(body).to have_key(:data)
