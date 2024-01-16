@@ -190,6 +190,7 @@
           1,
           1,
           1,
+          1,
           null,
           null,
           null
@@ -208,7 +209,7 @@
           1,
           null,
           1,
-          5,
+          1,
           null,
           null
         ]
@@ -220,12 +221,16 @@
           null
         ]
       },
-      "/Users/kameron/turing_work/3mod/projects/sweater_weather/app/controllers/api/v0/forecast_controller.rb": {
+      "/Users/kameron/turing_work/3mod/projects/sweater_weather/app/controllers/api/v0/road_trips_controller.rb": {
         "lines": [
           1,
           1,
           1,
+          0,
+          null,
           1,
+          1,
+          null,
           null,
           null
         ]
@@ -236,14 +241,37 @@
           null
         ]
       },
-      "/Users/kameron/turing_work/3mod/projects/sweater_weather/app/facades/forecast_facade.rb": {
+      "/Users/kameron/turing_work/3mod/projects/sweater_weather/app/poros/road_trip.rb": {
         "lines": [
           1,
           1,
           null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/kameron/turing_work/3mod/projects/sweater_weather/app/facades/road_trip_facade.rb": {
+        "lines": [
+          1,
+          1,
           null,
           1,
           1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
           1,
           null,
           null
@@ -253,10 +281,19 @@
         "lines": [
           1,
           1,
-          2,
-          2,
+          1,
+          1,
           null,
-          2,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
           null,
           null,
           1,
@@ -273,136 +310,36 @@
         "lines": [
           1,
           1,
-          2,
-          2,
-          2,
-          null,
-          2,
-          null,
+          1,
+          1,
+          1,
+          0,
           null,
           1,
           null,
-          1,
-          2,
-          2,
           null,
-          null,
-          null
-        ]
-      },
-      "/Users/kameron/turing_work/3mod/projects/sweater_weather/app/poros/forecast.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
           1,
           null,
           null,
           1,
           null,
           1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           1,
-          1,
-          null,
-          5,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          24,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/kameron/turing_work/3mod/projects/sweater_weather/app/serializers/forecast_serializer.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/kameron/turing_work/3mod/projects/sweater_weather/app/controllers/api/v0/sessions_controller.rb": {
-        "lines": [
-          1,
-          1,
-          2,
-          2,
-          1,
-          null,
           1,
           null,
           null,
           null
         ]
       },
-      "/Users/kameron/turing_work/3mod/projects/sweater_weather/app/serializers/users_serializer.rb": {
+      "/Users/kameron/turing_work/3mod/projects/sweater_weather/app/serializers/road_trip_serializer.rb": {
         "lines": [
           1,
           1,
           1,
-          null
-        ]
-      },
-      "/Users/kameron/turing_work/3mod/projects/sweater_weather/app/controllers/api/v0/users_controller.rb": {
-        "lines": [
-          1,
-          1,
-          7,
-          null,
-          7,
-          2,
-          5,
-          1,
-          4,
-          1,
-          3,
-          1,
-          2,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          7,
-          null,
           null
         ]
       }
     },
-    "timestamp": 1705424672
+    "timestamp": 1705428678
   }
 }
