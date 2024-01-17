@@ -102,5 +102,21 @@ RSpec.describe 'Road Trip Request' do
         expect(attributes[:weather_at_eta]).to be_empty
       end
     end
+
+    it 'returns 401 if api_key is invalid' do
+      VCR.use_cassette 'Road Trip Invalid API Key' do
+        road_trip_params = {
+          "origin": "Cincinatti,OH",
+          "destination": "London,UK",
+          "api_key": "gobbledygook"
+        }
+
+        post '/api/v0/road_trip', params: road_trip_params, as: :json
+
+        expect(response).to_not be_successful
+        expect(response.status).to eq(401)
+        expect(response.body).to eq("{\"errors\":\"Invalid API key\"}")
+      end
+    end
   end
 end
