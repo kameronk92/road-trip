@@ -4,7 +4,11 @@ class Api::V0::RoadTripsController < ApplicationController
       render json: { errors: "Invalid API key" }, status: :unauthorized
     else
       road_trip = RoadTripFacade.get_road_trip(params[:origin], params[:destination])
-      render json: RoadTripSerializer.new(road_trip)
+      if road_trip.travel_time == "impossible"
+        render json: RoadTripSerializer.new(road_trip), status: :bad_request
+      else
+        render json: RoadTripSerializer.new(road_trip), status: :ok
+      end
     end
   end
 end

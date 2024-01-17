@@ -69,17 +69,37 @@ RSpec.describe 'Road Trip Request' do
 
         road_trip_params = {
           "origin": "Cincinatti,OH",
-          "destination": "Chicago,IL",
+          "destination": "London,UK",
           "api_key": user.api_key
         }
 
         post '/api/v0/road_trip', params: road_trip_params, as: :json
 
         expect(response).to_not be_successful
-        expect(response.status).to eq(401)
+        expect(response.status).to eq(400)
 
         data = JSON.parse(response.body, symbolize_names: true)
 
+        expect(data).to have_key(:data)
+        expect(data[:data]).to have_key(:id)
+        expect(data[:data][:id]).to eq(nil)
+        expect(data[:data]).to have_key(:type)
+        expect(data[:data][:type]).to eq("road_trip")
+        expect(data[:data]).to have_key(:attributes)
+        expect(data[:data][:attributes]).to be_a(Hash)
+  
+        attributes = data[:data][:attributes]
+
+        expect(attributes).to have_key(:start_city)
+        expect(attributes[:start_city]).to be_a(String)
+        expect(attributes).to have_key(:end_city)
+        expect(attributes[:end_city]).to be_a(String)
+        expect(attributes).to have_key(:travel_time)
+        expect(attributes[:travel_time]).to be_a(String)
+        expect(attributes[:travel_time]).to eq("impossible")
+        expect(attributes).to have_key(:weather_at_eta)
+        expect(attributes[:weather_at_eta]).to be_a(Hash)
+        expect(attributes[:weather_at_eta]).to be_empty
       end
     end
   end
