@@ -17,14 +17,13 @@ class RoadTrip
     hour = time_string.hour
     
     # plug hour into forecast
-    big_forecast = data[:forecast][:forecast][:forecastday].first[:hour][hour]
-    
+    arrival_hour_forecast = data[:forecast][:forecast][:forecastday].first[:hour][hour]
+
     {
-      temperature: big_forecast[:temp_f],
-      datetime: big_forecast[:time],
-      condition: big_forecast[:condition][:text]
+      #
+      temperature: arrival_hour_forecast[:temp_f],
+      datetime: arrival_hour_forecast[:time],
+      condition: arrival_hour_forecast[:condition][:text]
     }
   end
-
-  # arrival_time = Time.at(Time.now.to_i + unix_travel_time)
 end

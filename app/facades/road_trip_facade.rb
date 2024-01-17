@@ -1,7 +1,9 @@
 class RoadTripFacade
   def self.get_road_trip(origin, destination)
     # get travel time, convert to unix for forecast
+
     time_hash = MapquestService.get_travel_time(origin, destination)
+    # require 'pry'; binding.pry
     travel_time = time_hash[:travel_time]
     unix_travel_time = time_hash[:unix]
     
