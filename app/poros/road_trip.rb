@@ -14,15 +14,16 @@ class RoadTrip
       @weather_at_eta = {}
     else
       time_string = data[:arrival_time]
-      
-      # Extract the arrival hour as an integer
+
+      # Extract the arrival day and hour as an integer
+      day = time_string.day - Date.today.day
       hour = time_string.hour
       
       # plug hour into forecast
-      arrival_hour_forecast = data[:forecast][:forecast][:forecastday].first[:hour][hour]
+
+      arrival_hour_forecast = data[:forecast][:forecast][:forecastday][day][:hour][hour]
 
       {
-        #
         temperature: arrival_hour_forecast[:temp_f],
         datetime: arrival_hour_forecast[:time],
         condition: arrival_hour_forecast[:condition][:text]

@@ -10,7 +10,6 @@ class RoadTripFacade
 
       #format time for forecast request
       arrival_time = Time.at(Time.now.to_i + unix_travel_time)
-      formatted_time = arrival_time.strftime("%Y-%m-%d")
     else
       travel_time = "impossible"
     end
@@ -18,13 +17,12 @@ class RoadTripFacade
     # get arrival coordinates
     coordinates = MapquestService.get_coordinates(destination)
 
-    forecast = WeatherApiService.get_forecast(coordinates, formatted_time)
+    forecast = WeatherApiService.get_forecast(coordinates)
 
     data = {
       start_city: origin,
       end_city: destination,
       travel_time: travel_time,
-      unix_travel_time: unix_travel_time,
       forecast: forecast,
       arrival_time: arrival_time
     }
