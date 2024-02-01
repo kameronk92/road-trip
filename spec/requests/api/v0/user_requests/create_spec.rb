@@ -53,7 +53,7 @@ RSpec.describe 'User Create API' do
         password_confirmation: "password"
       }
 
-      Users.create!(user_1_params)
+      Users.create(user_1_params)
 
       user_2_params = user_1_params
 
