@@ -1,0 +1,23 @@
+databases:
+  - name: sweater-weather
+    databaseName: sweater-weather
+    user: kameronk92
+    plan: free
+
+services:
+  - type: web
+    name: sweater-weather
+    runtime: ruby
+    plan: free
+    buildCommand: "./bin/render-build.sh"
+    # preDeployCommand: "./bin/rails db:migrate" # preDeployCommand only available on paid instance types
+    startCommand: "./bin/rails server"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase: postgres://sweater_weather_user:UQm56YItfEPGK4lrKxPufno8hwyZIups@dpg-cmtubkn109ks73afd0h0-a/sweater_weather
+          name: mysite
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
+      - key: WEB_CONCURRENCY
+        value: 2 # sensible default
