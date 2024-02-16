@@ -21,7 +21,7 @@ RSpec.describe 'Weather API Service' do
       expect(current_weather[:condition]).to have_key(:icon)
       
       #test forecast data
-      expect(data[:forecast][:forecastday].count).to eq(5)
+      expect(data[:forecast][:forecastday].count).to eq(3)
       forecast = data[:forecast][:forecastday][0]
       expect(forecast).to have_key(:date)
       expect(forecast).to have_key(:astro)

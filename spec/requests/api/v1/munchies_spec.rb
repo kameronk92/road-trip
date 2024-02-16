@@ -62,8 +62,6 @@ RSpec.describe 'Munchies API' do
           expect(response_body).to have_key(:error)
           expect(response_body[:error]).to be_a(String)
           expect(response_body[:error]).to eq('Please provide a destination and food type')
-
-          require 'pry'; binding.pry
         end
       end
     end
