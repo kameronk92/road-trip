@@ -1,0 +1,82 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.yelp.com/v3/businesses/search?limit=1&location=san%20luis%20obispo,%20ca&sort_by=best_match&term=sandwich
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer Jn4gQ7wvuzhXYA-8cOJ7j4I1ghnt8TLXA7u5kXF2GB3qr7_Of-j_2MmonkY7SQrMbA6EXe1rV0IOU9xT0sqT0nnmwJAtUTZ-A99AW_GmdS_XciOiI9vj51FCnWalZXYx
+      User-Agent:
+      - Faraday v2.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Ratelimit-Resettime:
+      - '2024-01-16T00:00:00+00:00'
+      X-Zipkin-Id:
+      - ead4cee22bc61c96
+      X-Routing-Service:
+      - routing-main--useast1-74f644dc4b-cnn4p; site=public_api_v3
+      X-B3-Sampled:
+      - '0'
+      Server:
+      - envoy
+      Ratelimit-Remaining:
+      - '496.0'
+      Ratelimit-Dailylimit:
+      - '500.0'
+      X-Mode:
+      - ro
+      X-Proxied:
+      - 10-65-130-183-useast1bprod
+      X-Extlb:
+      - 10-65-130-183-useast1bprod
+      Cache-Control:
+      - max-age=0, no-store, private, no-transform
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Mon, 15 Jan 2024 17:30:37 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-chi-kigq8000049-CHI
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      Vary:
+      - Accept-Encoding
+      Alt-Svc:
+      - h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"businesses": [{"id": "tgx533AzRRPFVdVP2el2rw", "alias": "high-street-market-and-deli-san-luis-obispo",
+        "name": "High Street Market & Deli", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/newdKFyF8E3nTAO6XymAQw/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/high-street-market-and-deli-san-luis-obispo?adjust_creative=MStLhaPRlOCeZeyEz0OfSw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=MStLhaPRlOCeZeyEz0OfSw",
+        "review_count": 1547, "categories": [{"alias": "delis", "title": "Delis"},
+        {"alias": "sandwiches", "title": "Sandwiches"}], "rating": 4.5, "coordinates":
+        {"latitude": 35.2723045349121, "longitude": -120.664443969727}, "transactions":
+        [], "price": "$$", "location": {"address1": "350 High St", "address2": "",
+        "address3": "", "city": "San Luis Obispo", "zip_code": "93401", "country":
+        "US", "state": "CA", "display_address": ["350 High St", "San Luis Obispo,
+        CA 93401"]}, "phone": "+18055414738", "display_phone": "(805) 541-4738", "distance":
+        415.9413386182676}], "total": 204, "region": {"center": {"longitude": -120.66421508789062,
+        "latitude": 35.26859663931178}}}'
+  recorded_at: Mon, 15 Jan 2024 17:30:37 GMT
+recorded_with: VCR 6.2.0

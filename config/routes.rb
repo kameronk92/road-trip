@@ -11,5 +11,9 @@ Rails.application.routes.draw do
       post "/sessions", to: "sessions#create"
       post "/road_trip", to: "road_trips#create"
     end
+
+    namespace :v1 do
+      get "/munchies", to: "munchies#index"
+    end
   end
 end
