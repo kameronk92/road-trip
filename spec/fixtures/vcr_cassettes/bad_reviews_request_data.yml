@@ -1,0 +1,169 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.yelp.com/v3/businesses/search?limit=1&location=pueblo,co&sort_by=best_match&term=crackerbarrel
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer Jn4gQ7wvuzhXYA-8cOJ7j4I1ghnt8TLXA7u5kXF2GB3qr7_Of-j_2MmonkY7SQrMbA6EXe1rV0IOU9xT0sqT0nnmwJAtUTZ-A99AW_GmdS_XciOiI9vj51FCnWalZXYx
+      User-Agent:
+      - Faraday v2.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      X-Routing-Service:
+      - routing-main--useast1-6cf555d647-vcwg4; site=public_api_v3
+      Ratelimit-Resettime:
+      - '2024-02-17T00:00:00+00:00'
+      X-B3-Sampled:
+      - '0'
+      Server:
+      - envoy
+      X-Zipkin-Id:
+      - 509ddca6decafd73
+      Ratelimit-Dailylimit:
+      - '500.0'
+      Ratelimit-Remaining:
+      - '490.0'
+      X-Mode:
+      - ro
+      X-Proxied:
+      - 10-65-180-149-useast1bprod
+      X-Extlb:
+      - 10-65-180-149-useast1bprod
+      Cache-Control:
+      - max-age=0, no-store, private, no-transform
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Fri, 16 Feb 2024 21:15:38 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-den8259-DEN
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      Vary:
+      - Accept-Encoding
+      Alt-Svc:
+      - h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"businesses": [{"id": "TaK6bbzpQ8ZLLvVZ_iG6Fg", "alias": "cracker-barrel-old-country-store-pueblo-2",
+        "name": "Cracker Barrel Old Country Store", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/k-wRyJo0Yi_bGoUD5DScLQ/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/cracker-barrel-old-country-store-pueblo-2?adjust_creative=MStLhaPRlOCeZeyEz0OfSw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=MStLhaPRlOCeZeyEz0OfSw",
+        "review_count": 135, "categories": [{"alias": "southern", "title": "Southern"},
+        {"alias": "breakfast_brunch", "title": "Breakfast & Brunch"}, {"alias": "tradamerican",
+        "title": "American"}], "rating": 3.0, "coordinates": {"latitude": 38.32284615169613,
+        "longitude": -104.61664851165668}, "transactions": ["delivery", "pickup"],
+        "price": "$$", "location": {"address1": "4735 Elizabeth St N", "address2":
+        "", "address3": "", "city": "Pueblo", "zip_code": "81008", "country": "US",
+        "state": "CO", "display_address": ["4735 Elizabeth St N", "Pueblo, CO 81008"]},
+        "phone": "+17195950711", "display_phone": "(719) 595-0711", "distance": 6952.638386585546}],
+        "total": 2, "region": {"center": {"longitude": -104.5733642578125, "latitude":
+        38.27035217485165}}}'
+  recorded_at: Fri, 16 Feb 2024 21:15:38 GMT
+- request:
+    method: get
+    uri: https://api.yelp.com/v3/businesses/TaK6bbzpQ8ZLLvVZ_iG6Fg/reviews
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer Jn4gQ7wvuzhXYA-8cOJ7j4I1ghnt8TLXA7u5kXF2GB3qr7_Of-j_2MmonkY7SQrMbA6EXe1rV0IOU9xT0sqT0nnmwJAtUTZ-A99AW_GmdS_XciOiI9vj51FCnWalZXYx
+      User-Agent:
+      - Faraday v2.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Ratelimit-Dailylimit:
+      - '500.0'
+      X-Zipkin-Id:
+      - f7f2c91bccdfd3d4
+      X-Routing-Service:
+      - routing-main--useast1-6cf555d647-v8swx; site=public_api_v3
+      Ratelimit-Remaining:
+      - '489.0'
+      X-B3-Sampled:
+      - '0'
+      Ratelimit-Resettime:
+      - '2024-02-17T00:00:00+00:00'
+      Server:
+      - envoy
+      X-Mode:
+      - ro
+      X-Proxied:
+      - 10-65-187-35-useast1bprod
+      X-Extlb:
+      - 10-65-187-35-useast1bprod
+      Cache-Control:
+      - max-age=0, no-store, private, no-transform
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Fri, 16 Feb 2024 21:15:39 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-den8241-DEN
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      Vary:
+      - Accept-Encoding
+      Alt-Svc:
+      - h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"reviews": [{"id": "uOw5BstWgnlK9N9fOZ4JwA", "url": "https://www.yelp.com/biz/cracker-barrel-old-country-store-pueblo-2?adjust_creative=MStLhaPRlOCeZeyEz0OfSw&hrid=uOw5BstWgnlK9N9fOZ4JwA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_reviews&utm_source=MStLhaPRlOCeZeyEz0OfSw",
+        "text": "I like Cracker Barrel''s Hash brown Casserole served with bacon and
+        the crispy onions!  I have it every time and it is consistently Good!  Now
+        that they are...", "rating": 4, "time_created": "2024-01-10 10:05:11", "user":
+        {"id": "9VrhFcEZWsXRuYD1g7vYzA", "profile_url": "https://www.yelp.com/user_details?userid=9VrhFcEZWsXRuYD1g7vYzA",
+        "image_url": "https://s3-media2.fl.yelpcdn.com/photo/3yZwPHSfGSkoJsMTHsFuDA/o.jpg",
+        "name": "LInda C."}}, {"id": "E75fcetLv0aXfpjS2TSO0A", "url": "https://www.yelp.com/biz/cracker-barrel-old-country-store-pueblo-2?adjust_creative=MStLhaPRlOCeZeyEz0OfSw&hrid=E75fcetLv0aXfpjS2TSO0A&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_reviews&utm_source=MStLhaPRlOCeZeyEz0OfSw",
+        "text": "My Boyfriend and I had reservations at 6:30, it took twenty minutes
+        after arriving to be sat. There were many open tables, when we finally did
+        get sat, the...", "rating": 1, "time_created": "2024-02-14 17:48:37", "user":
+        {"id": "btebewN2NB7BSMR8Cgvx3g", "profile_url": "https://www.yelp.com/user_details?userid=btebewN2NB7BSMR8Cgvx3g",
+        "image_url": null, "name": "Tyler B."}}, {"id": "H8gnOZ511Is2sRchIb3A-g",
+        "url": "https://www.yelp.com/biz/cracker-barrel-old-country-store-pueblo-2?adjust_creative=MStLhaPRlOCeZeyEz0OfSw&hrid=H8gnOZ511Is2sRchIb3A-g&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_reviews&utm_source=MStLhaPRlOCeZeyEz0OfSw",
+        "text": "When I''m traveling I like to stop for meals at restaurants that
+        I like and are consistent. Locations normally close to major highways across
+        the country....", "rating": 4, "time_created": "2023-07-22 23:57:50", "user":
+        {"id": "sNeIEDsCcf6wQRRiqvtjTg", "profile_url": "https://www.yelp.com/user_details?userid=sNeIEDsCcf6wQRRiqvtjTg",
+        "image_url": "https://s3-media3.fl.yelpcdn.com/photo/LxmzwWQgUilGBBzdJnrv1g/o.jpg",
+        "name": "Greg M."}}], "total": 135, "possible_languages": ["en", "es"]}'
+  recorded_at: Fri, 16 Feb 2024 21:15:39 GMT
+recorded_with: VCR 6.2.0
