@@ -18,7 +18,7 @@ RSpec.describe 'Bad Reviews API' do
         expect(response_body[:data]).to have_key(:id)
         expect(response_body[:data][:id]).to eq(nil)
         expect(response_body[:data]).to have_key(:type)
-        expect(response_body[:data][:type]).to eq('bad_reviews')
+        expect(response_body[:data][:type]).to eq('bad_review')
         end
       end
     end
